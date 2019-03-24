@@ -13,27 +13,31 @@
     }
     </style>
 
-    <script>
-    function checkForm(){
-      // Write a function that displays the appropriate error message(s) if a field is left blank.  Make sure the form action is not performed if either field is blank.
-      var nameInput = document.getElementById("name").value;
-      var addrInput = document.getElementById("addr").value;
-      var missingName = document.getElementById("nameError");
-      var missingAddr = document.getElementById("addressError");
-      var retVal = true;
-
-      if(nameInput === ""){
-        missingName.style.display = "block";
-        retVal = false;
-      }
-
-      if(addrInput === ""){
-        missingAddr.style.display = "block";
-        retVal = false;
-      }
-      return retVal;
-      }
-    </script>
+<script>
+function checkForm(){
+    var nameField = document.querySelector("#name").value;
+    var addressField = document.querySelector("#addr").value;
+    var blankName = document.getElementById("nameError");
+    var blankAddr = document.getElementById("addressError");
+    var is_valid = ""
+    
+    if (nameField.length === 0){
+      blankName.style.display = "block";
+      is_valid = false;
+    }
+    else{
+      blankAddr.style.display = "";
+    }
+    if (addressField.length === 0){
+      blankAddr.style.display = "block";
+      is_valid = false;
+    }
+    else{
+      blankAddr.style.display = "";
+    }
+    return is_valid;
+    }
+</script>
 </head>
 <body>
     <h1>Challenge 3</h1>
